@@ -1,0 +1,18 @@
+package com.example.Cricket.Cricket;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface CricketRepository extends JpaRepository<Player, Long> {
+    @Query("SELECT i FROM Player i WHERE i.id = ?1")
+    Optional<Player> findById(Long id);
+
+
+    // inbuilt
+    List<Player> findAllByCountry(String country);
+}
