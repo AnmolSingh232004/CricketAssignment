@@ -29,7 +29,7 @@ public class CricketService {
 
     }
     private Long calculateAverageScore(Player player) {
-        Long score = player.getTotalScore(); // Assuming you have a method to get player's scores
+        Long score = player.getTotalScore();
         if (score == 0) {
             return 0L;
         } else {
